@@ -1,0 +1,367 @@
+:root{
+  --backgroundColorT: transparent;
+  --backgroundColorST: rgba(0, 0, 0, 0.086);
+  --backgroundColorW: #FFFFFF;
+  --backgroundColorB:#282828;
+  --backgroundColorW-Hover:  rgba(0, 0, 0, 0.1);
+  
+}
+.tooltip{
+  cursor: auto;
+}
+
+
+
+body{
+  font-family:"Roboto",Arial ;
+  margin: 0px;
+  background-color: orange;
+}
+button{
+  border: none;
+}button:hover{
+  cursor: pointer;
+
+}
+
+
+header{
+  margin: 0px;
+  background-color: var(--backgroundColorW);
+  height: 56px;
+  padding-left: 10px;padding-right: 10px;
+  
+  display: flex;
+  align-items: center;
+}
+.leftAreaHeader{
+  display: flex; 
+  align-items: center;
+  padding-right: 20px ;
+}
+.menuButton{
+  border-radius: 30px;
+  padding: 8px;
+  margin-right: 4px;
+  display: flex;
+  align-items: center;
+  background-color: var(--backgroundColorW);
+}.menuButton:hover{
+  background-color: var(--backgroundColorW-Hover);
+}.menuButton svg{
+  height: 24px;
+  width: 24px;
+}
+
+/* Youtube icon */
+.youtubeIcon{
+  min-width: 90px;height: 20px;
+  padding: 18px 14px 18px 16px;
+  background-color: var(--backgroundColorT);
+  border: none;
+  position: relative;
+
+  flex: none;
+  justify-content: center;
+  /* background-color: purple; */
+}.youtubeIcon:hover{
+  cursor: pointer;
+}.youtubeIcon img{
+  /* min-width: 100%; */
+  width: 100%;height: 100%;
+
+}.youtubeIcon small{
+  position: absolute;
+  top: 12px; right: -4px;
+  font-size: 10px;
+}.youtubeIcon .tooltip{
+  /* tooltip */
+  position: absolute;
+
+  color: white;
+  background-color: var(--backgroundColorB);
+
+  font-size: 11px;
+  right: -40%;
+  bottom: -8px;
+
+  border: solid 1px white;
+  padding: 2px;
+  border-radius: 3px;
+
+  opacity: 0;
+}.youtubeIcon:hover .tooltip{
+  opacity: 1;
+  transition: opacity .4s;
+  transition-delay: .7s;
+}
+
+
+
+
+header Button{
+  border-radius: 30px;
+  padding: 8px;
+  position: relative;
+  display: flex;
+  background-color: var(--backgroundColorT);
+  font-family: "Roboto",Arial;
+}header Button:hover{
+  background-color: var(--backgroundColorW-Hover);
+}header button:hover .tooltip{
+ opacity: 1;
+}header Button img{
+  width: 24px;height: 24px;
+}header button .tooltip{
+  position: absolute;
+  background-color: rgb(72, 72, 72, .8);
+  color: var(--backgroundColorW);
+
+  opacity: 0;
+  transition: opacity .1s;
+  pointer-events: none;
+
+  padding: 8px 10px 10px 10px;
+  font-size: 12px;
+  border-radius: 6px;
+  width: fit-content;
+  white-space: nowrap;
+
+}
+/* Header buttons tooltips positioning */
+.UploadB .tooltip{
+  position: absolute;
+  bottom: -120%;
+  left: -7px;
+}
+.NotificationsB .tooltip{
+  bottom: -120%;
+  left: -28px;
+}
+.SearchB .tooltip{
+  bottom: -120%;
+  left: -7px;
+}
+.VoiceSearchB .tooltip{
+  bottom: -120%;
+  left: -55px;
+}
+
+.centerHeader{
+  /* background-color: pink; */
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.rightHeader{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.notificationsNumber{
+  font-family:"Roboto",Arial ;
+  background-color: #c00;
+  color: white;
+  border: 2px solid;
+  border-color: var(--backgroundColorW);
+  font-size: 12px;
+  padding: 0px 4px 0px 4px;
+  border-radius: 200px;
+  position: absolute;
+  top: 5px; right: 1px;
+}
+
+/* Channel Button */
+
+.channelButton{
+  border-radius: 0px;
+  
+  pointer-events:none ;
+  padding:0px 8px 0px 10px;
+  /* background-color: orange; */
+
+}.channelButton:hover{
+  background-color: transparent;
+}
+.channelButton img{
+  pointer-events: all;
+  width: 32px;height: 32px;
+  border-radius: 222px;
+}
+
+
+
+/* Category bar */
+.CatBar{
+  width: 100%;
+  display: flex;
+  height: 56px; width:100%;
+  background-color: var(--backgroundColorW);
+  touch-action: pan-x;
+  
+}
+.CatBarButtons-container{
+  flex-grow: 1; 
+  display: flex;
+  align-items: center;
+  overflow: scroll;
+  /* touch-action: pan-x; */
+
+
+
+}.CatBarButtons-container::-webkit-scrollbar{
+  width: 0;
+}.CatBar .CatBarButtons-container button{
+  height: 60%;
+  margin: 0px 8px;
+  padding: 0px 10px;
+  border-radius: 8px;
+  font-family: 'Roboto', Arial;
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+  background-color: var(--backgroundColorST);
+  margin-right:2px;
+
+
+  
+}.CatBar button:active{
+  /* background-color:var(--backgroundColorB); */
+}
+.CatBar .Retroceso{
+  display: flex;
+  width: 56px;
+  height: 100%;
+  background-color: orange;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 20px;
+}.CatBar .Retroceso button{
+  height: 40px;
+  width: 40px;
+  border-radius: 200px;
+  background-color: var(--backgroundColorW);
+  font-size: 20px;
+
+}
+.CatBar Button{
+  font-family: Roboto, Arial;
+  background-color: var(--backgroundColorW);
+
+  width: fit-content;
+}
+
+
+
+
+
+/* Media querys */
+
+@media(max-width:695px){
+  .video-feed{
+    background-color: red;
+    grid-template-columns: 1fr;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 520px;
+
+  }
+}
+@media(min-width:696px) and (max-width:1024px){
+  .video-feed{
+    background-color: rgb(200, 79, 79);   
+    grid-template-columns: 1fr 1fr;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1000px;
+
+  }
+}
+@media(min-width:1025px) and (max-width:1551px){
+  .video-feed{
+    background-color: rgb(200, 123, 79);
+    grid-template-columns: 1fr 1fr 1fr;
+
+  }
+}
+@media(min-width:1552px) and (max-width:1860px){
+  .video-feed{
+    background-color: rgb(200, 123, 79);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  }
+}
+@media(min-width:1861px) and (max-width:2190px){
+  .video-feed{
+    background-color: rgb(200, 123, 79);
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+  }
+}@media(min-width:2191px){
+  .video-feed{
+    background-color: rgb(200, 123, 79);
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+
+  }
+}
+
+
+/* FEED DE VIDEO */
+
+
+.video-feed{
+  display: grid;
+  padding-top: 24px;
+  height: 100%;
+}
+
+.video-container{
+  background-color: pink;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: fit-content;
+}
+.Video-pic-container{
+  /* background-color: orange; */
+  width: 100%;
+}.Video-pic{
+  width: 100%;
+  border-radius: 15px;
+  transition: border-radius 0.5s;
+}.Video-pic:hover{
+  border-radius: 0px;
+}
+.Video-Data{
+  display: flex;
+  margin-top: 12px;
+}
+.ProfilePic-container{
+  width: 80px;
+  margin-right: 10px ;
+}
+.ProfilePic{
+ border-radius: 50% ;
+ width: 100%;
+}
+.Video-Info-container{
+ color:gray;
+ margin-right: 30px;
+ font-size: 14px;
+ margin-bottom:  30px;
+
+}.Video-title{
+  font-size: 16px;
+  font-weight: bold;
+
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-bottom: 4px;
+  color: black;
+}.Video-channel-name{
+
+}
+
