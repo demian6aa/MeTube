@@ -6,8 +6,13 @@
   <title>Metube</title>
   <!--styles  -->
   <link rel="stylesheet" href="styles/General.css">
-  <!--EndStyles  -->
+  <link rel="stylesheet" href="styles/CatBar.css">
+  <link rel="stylesheet" href="styles/Header.css">
 
+  <!--EndStyles  -->
+  <!-- Scripts -->
+  <script src="JS/CatBar.js" defer></script> 
+  <!-- EndScripts -->
   <!--TextData-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,6 +25,13 @@
 
 </head>
 <body>
+
+  <div class="leftNav-background">
+    <nav id="leftNavID" class="leftNav">
+
+    </nav>
+  </div>
+  
   <header>
     <!-- LeftAreaHeader -->
     <div class="leftAreaHeader">
@@ -60,33 +72,31 @@
     </button>
 
   </header>
+  
+
   <div class="CatBar">
-    <!-- <div class="Retroceso"><button>&#60</button></div> -->
-
-    <div class="CatBarButtons-container">
-      <button>Todo</button>
-      <button>Música</button>
-      <button>Banda sonora</button>
-      <button>Listas de reproducción</button>
-      <button>Mixes</button>
-      <button>En directo</button>
-      <button>Manga</button>
-      <button>Videojuegos</button>
-      <button>Programación</button>
-      <button>Pódcast</button>
-      <button>Truenos</button>
-      <button>Blender</button>
-      <button>Presentaciones</button>
-      <button>Subidas recientes</button>
-      <button>Visto</button>
-      <button>Novedades para ti</button>
+    <div class="moveButton"><button id="left">&#60</button></div>
+    <div class="CatBarContainer">
+      <button class="CatButton active">Todo</button>
+      <button class="CatButton">Música</button>
+      <button class="CatButton">Banda sonora</button>
+      <button class="CatButton">Listas de reproducción</button>
+      <button class="CatButton">Mixes</button>
+      <button class="CatButton">En directo</button>
+      <button class="CatButton">Manga</button>
+      <button class="CatButton">Videojuegos</button>
+      <button class="CatButton">Programación</button>
+      <button class="CatButton">Pódcast</button>
+      <button class="CatButton">Truenos</button>
+      <button class="CatButton">Blender</button>
+      <button class="CatButton">Presentaciones</button>
+      <button class="CatButton">Subidas recientes</button>
+      <button class="CatButton">Visto</button>
+      <button class="CatButton">Novedades para ti</button>
     </div>
-
-    <!-- <div class="Retroceso">      <button>&#62</button>    </div> -->
-
-
-
+    <div class="moveButton"><button id="right">&#62</button></div>
   </div>
+
 
   
   <main>

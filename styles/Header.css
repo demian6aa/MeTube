@@ -1,0 +1,90 @@
+header Button{
+  border-radius: 30px;
+  padding: 8px;
+  position: relative;
+  display: flex;
+  background-color: var(--backgroundColorT);
+  font-family: "Roboto",Arial;
+}header Button:hover{
+  background-color: var(--backgroundColorW-hover);
+}header button:hover .tooltip{
+ opacity: 1;
+}header Button img{
+  width: 24px;height: 24px;
+}header button .tooltip{
+  position: absolute;
+  background-color: rgb(72, 72, 72, .8);
+  color: var(--backgroundColorW);
+
+  opacity: 0;
+  transition: opacity .1s;
+  pointer-events: none;
+
+  padding: 8px 10px 10px 10px;
+  font-size: 12px;
+  border-radius: 6px;
+  width: fit-content;
+  white-space: nowrap;
+
+}
+/* Header buttons tooltips positioning */
+.UploadB .tooltip{
+  position: absolute;
+  bottom: -120%;
+  left: -7px;
+}
+.NotificationsB .tooltip{
+  bottom: -120%;
+  left: -28px;
+}
+.SearchB .tooltip{
+  bottom: -120%;
+  left: -7px;
+}
+.VoiceSearchB .tooltip{
+  bottom: -120%;
+  left: -55px;
+}
+
+.centerHeader{
+  /* background-color: pink; */
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.rightHeader{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.notificationsNumber{
+  font-family:"Roboto",Arial ;
+  background-color: #c00;
+  color: white;
+  border: 2px solid;
+  border-color: var(--backgroundColorW);
+  font-size: 12px;
+  padding: 0px 4px 0px 4px;
+  border-radius: 200px;
+  position: absolute;
+  top: 5px; right: 1px;
+}
+
+/* Channel Button */
+
+.channelButton{
+  border-radius: 0px;
+  
+  pointer-events:none ;
+  padding:0px 8px 0px 10px;
+  /* background-color: orange; */
+
+}.channelButton:hover{
+  background-color: transparent;
+}
+.channelButton img{
+  pointer-events: all;
+  width: 32px;height: 32px;
+  border-radius: 222px;
+}

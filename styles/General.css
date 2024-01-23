@@ -1,13 +1,24 @@
+/* Z-index bibliography:
+- Base => 0
+- Tooltips => 100
+- NavBar => 200
+*/
+
+
+
 :root{
   --backgroundColorT: transparent;
   --backgroundColorST: rgba(0, 0, 0, 0.086);
+  --backgroundColorST-hover: rgba(0, 0, 0, .15);
   --backgroundColorW: #FFFFFF;
   --backgroundColorB:#282828;
-  --backgroundColorW-Hover:  rgba(0, 0, 0, 0.1);
+  --backgroundColorB-WOpacity:#282828c7;
+  --backgroundColorW-hover:  rgba(0, 0, 0, 0.1);
   
 }
 .tooltip{
   cursor: auto;
+  z-index: 100;
 }
 
 
@@ -47,7 +58,8 @@ header{
   align-items: center;
   background-color: var(--backgroundColorW);
 }.menuButton:hover{
-  background-color: var(--backgroundColorW-Hover);
+  background-color: var(--backgroundColorW-hover);
+  
 }.menuButton svg{
   height: 24px;
   width: 24px;
@@ -75,7 +87,6 @@ header{
   top: 12px; right: -4px;
   font-size: 10px;
 }.youtubeIcon .tooltip{
-  /* tooltip */
   position: absolute;
 
   color: white;
@@ -99,162 +110,35 @@ header{
 
 
 
-header Button{
-  border-radius: 30px;
-  padding: 8px;
-  position: relative;
-  display: flex;
-  background-color: var(--backgroundColorT);
-  font-family: "Roboto",Arial;
-}header Button:hover{
-  background-color: var(--backgroundColorW-Hover);
-}header button:hover .tooltip{
- opacity: 1;
-}header Button img{
-  width: 24px;height: 24px;
-}header button .tooltip{
+
+
+
+
+/* Left Nav */
+
+.leftNav{
   position: absolute;
-  background-color: rgb(72, 72, 72, .8);
-  color: var(--backgroundColorW);
+  top: 0; bottom: 0; left: 0;
+  width: 240px;
 
-  opacity: 0;
-  transition: opacity .1s;
-  pointer-events: none;
-
-  padding: 8px 10px 10px 10px;
-  font-size: 12px;
-  border-radius: 6px;
-  width: fit-content;
-  white-space: nowrap;
-
-}
-/* Header buttons tooltips positioning */
-.UploadB .tooltip{
-  position: absolute;
-  bottom: -120%;
-  left: -7px;
-}
-.NotificationsB .tooltip{
-  bottom: -120%;
-  left: -28px;
-}
-.SearchB .tooltip{
-  bottom: -120%;
-  left: -7px;
-}
-.VoiceSearchB .tooltip{
-  bottom: -120%;
-  left: -55px;
-}
-
-.centerHeader{
-  /* background-color: pink; */
-  width: 100%;
-  display: flex;
-  justify-content: end;
-  align-items: center;
-}
-.rightHeader{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.notificationsNumber{
-  font-family:"Roboto",Arial ;
-  background-color: #c00;
-  color: white;
-  border: 2px solid;
-  border-color: var(--backgroundColorW);
-  font-size: 12px;
-  padding: 0px 4px 0px 4px;
-  border-radius: 200px;
-  position: absolute;
-  top: 5px; right: 1px;
-}
-
-/* Channel Button */
-
-.channelButton{
-  border-radius: 0px;
-  
-  pointer-events:none ;
-  padding:0px 8px 0px 10px;
-  /* background-color: orange; */
-
-}.channelButton:hover{
-  background-color: transparent;
-}
-.channelButton img{
-  pointer-events: all;
-  width: 32px;height: 32px;
-  border-radius: 222px;
-}
-
-
-
-/* Category bar */
-.CatBar{
-  width: 100%;
-  display: flex;
-  height: 56px; width:100%;
   background-color: var(--backgroundColorW);
-  touch-action: pan-x;
-  
+
+
+  /* Variables a quitar al acabar */
+  height: 3000px;
+  z-index: 200;
 }
-.CatBarButtons-container{
-  flex-grow: 1; 
-  display: flex;
-  align-items: center;
-  overflow: scroll;
-  /* touch-action: pan-x; */
-
-
-
-}.CatBarButtons-container::-webkit-scrollbar{
-  width: 0;
-}.CatBar .CatBarButtons-container button{
-  height: 60%;
-  margin: 0px 8px;
-  padding: 0px 10px;
-  border-radius: 8px;
-  font-family: 'Roboto', Arial;
-  font-size: 15px;
-  font-weight: 500;
-  white-space: nowrap;
-  background-color: var(--backgroundColorST);
-  margin-right:2px;
-
-
-  
-}.CatBar button:active{
-  /* background-color:var(--backgroundColorB); */
-}
-.CatBar .Retroceso{
-  display: flex;
-  width: 56px;
+.leftNav-background{
+  position: absolute;
+  width: 100%;
   height: 100%;
-  background-color: orange;
-  justify-content: center;
-  align-items: center;
-  padding: 0px 20px;
-}.CatBar .Retroceso button{
-  height: 40px;
-  width: 40px;
-  border-radius: 200px;
-  background-color: var(--backgroundColorW);
-  font-size: 20px;
-
-}
-.CatBar Button{
-  font-family: Roboto, Arial;
-  background-color: var(--backgroundColorW);
-
-  width: fit-content;
+  z-index: 200;
+  background-color: var(--backgroundColorB-WOpacity);
 }
 
 
 
-
+/* Left nav Ends */
 
 /* Media querys */
 
