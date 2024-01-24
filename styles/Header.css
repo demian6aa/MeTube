@@ -1,3 +1,77 @@
+header{
+  margin: 0px;
+  background-color: var(--backgroundColorW);
+  height: 56px;
+  padding-left: 10px;padding-right: 10px;
+  
+  display: flex;
+  align-items: center;
+}
+.leftAreaHeader{
+  display: flex; 
+  align-items: center;
+  padding-right: 20px ;
+}
+.menu-button{
+  border-radius: 30px;
+  padding: 8px;
+  margin-right: 4px;
+  display: flex;
+  align-items: center;
+  background-color: var(--backgroundColorW);
+}.menu-button:hover{
+  background-color: var(--backgroundColorW-hover);
+  
+}.menu-button svg{
+  height: 24px;
+  width: 24px;
+}
+
+/* Youtube icon */
+.youtubeIcon{
+  min-width: 90px;height: 20px;
+  padding: 18px 14px 18px 16px;
+  background-color: var(--backgroundColorT);
+  border: none;
+  position: relative;
+
+  flex: none;
+  justify-content: center;
+  /* background-color: purple; */
+}.youtubeIcon:hover{
+  cursor: pointer;
+}.youtubeIcon img{
+  /* min-width: 100%; */
+  width: 100%;height: 100%;
+
+}.youtubeIcon small{
+  position: absolute;
+  top: 12px; right: -4px;
+  font-size: 10px;
+}.youtubeIcon .tooltip{
+  position: absolute;
+
+  color: white;
+  background-color: var(--backgroundColorB);
+
+  font-size: 11px;
+  right: -40%;
+  bottom: -8px;
+
+  border: solid 1px white;
+  padding: 2px;
+  border-radius: 3px;
+
+  opacity: 0;
+}.youtubeIcon:hover .tooltip{
+  opacity: 1;
+  transition: opacity .4s;
+  transition-delay: .7s;
+}
+
+
+
+
 header Button{
   border-radius: 30px;
   padding: 8px;

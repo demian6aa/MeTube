@@ -8,10 +8,12 @@
   <link rel="stylesheet" href="styles/General.css">
   <link rel="stylesheet" href="styles/CatBar.css">
   <link rel="stylesheet" href="styles/Header.css">
+  <link rel="stylesheet" href="styles/LeftNav.css">
 
   <!--EndStyles  -->
   <!-- Scripts -->
   <script src="JS/CatBar.js" defer></script> 
+  <script src="JS/LeftNav.js" defer></script> 
   <!-- EndScripts -->
   <!--TextData-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,16 +28,74 @@
 </head>
 <body>
 
-  <div class="leftNav-background">
+  <section class="leftNavAll">
+    <div class="leftNav-background"></div>
     <nav id="leftNavID" class="leftNav">
+      <!-- Nav header -->
+      <div style="display: flex; "> 
+        <button class="menu-button">
+          <svg xmlns="http://www.w3.org/2000" >
+            <g><path d="M21 6H3V5h18v1zm0 5H3v1h18v-1zm0 6H3v1h18v-1z"></path></g> 
+        </button>
+        <div  class="youtubeIcon">
+          <img src="thumbnails/icons/youtube-logo.svg" alt="">
+          <small>ME</small>
+          <div class="tooltip" >Página de inicio de Youtube</div>
+        </div>
+      </div>
+      <!-- Nav First section -->
+      <section id="leftNavGeneral" class="leftNav-section leftNav-general">
+        <button>Inicio</button>
+        <button>Shorts</button>
+        <button>Subscripciones</button>
+      </section>
+
+      <!-- Nav Account Section -->
+      <section class="leftNav-section leftNav-Channel">
+        <button>Tu</button>
+        <div>
+          <img src="Thumbnails/icons/home.svg" alt="">
+          <button>Tu canal</button>
+        </div>
+        <button>Historial</button>
+        <button>Mis Videos</button>
+        <button>Ver mas tarde</button>
+        <button>Tus Clips</button>
+      </section>
+
+
+      <!-- Subscriptions -->
+      <section class="leftNav-section leftNav-Subs">
+        <p class="title">Subscripciones</p>
+        <div>
+          <img src="Thumbnails/ProfilePics/1.jpg" alt="">
+          <p>channel name</p>
+        </div>
+      </section>
+
+      <!-- Explore -->
+      <section class="leftNav-section">
+        <p>Explorar</p>
+      </section>
+
+      <!-- More -->
+      <section class="leftNav-section">
+        <div>Youtube Premium</div>
+      </section>
+
+      <section class="leftNav-section">
+        <div>Configuración</div>
+
+
+      </section>
 
     </nav>
-  </div>
+  </section>
   
   <header>
     <!-- LeftAreaHeader -->
     <div class="leftAreaHeader">
-      <button  class="menuButton">
+      <button id="menuButton"  class="menu-button">
         <svg xmlns="http://www.w3.org/2000" >
           <g><path d="M21 6H3V5h18v1zm0 5H3v1h18v-1zm0 6H3v1h18v-1z"></path></g> 
       </button>
