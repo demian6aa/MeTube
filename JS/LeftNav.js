@@ -40,3 +40,8 @@ function alternateNav(){
     showNav();
   }
 }
+
+
+function highlightActiveTab(){
+  
+}

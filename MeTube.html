@@ -32,10 +32,9 @@
     <div class="leftNav-background"></div>
     <nav id="leftNavID" class="leftNav">
       <!-- Nav header -->
-      <div style="display: flex; "> 
+      <div style="display: flex; align-items: center;"> 
         <button class="menu-button">
-          <svg xmlns="http://www.w3.org/2000" >
-            <g><path d="M21 6H3V5h18v1zm0 5H3v1h18v-1zm0 6H3v1h18v-1z"></path></g> 
+          <svg xmlns="http://www.w3.org/2000" ><g><path d="M21 6H3V5h18v1zm0 5H3v1h18v-1zm0 6H3v1h18v-1z"></path></g> 
         </button>
         <div  class="youtubeIcon">
           <img src="thumbnails/icons/youtube-logo.svg" alt="">
@@ -45,22 +44,50 @@
       </div>
       <!-- Nav First section -->
       <section id="leftNavGeneral" class="leftNav-section leftNav-general">
-        <button>Inicio</button>
-        <button>Shorts</button>
-        <button>Subscripciones</button>
+        <button class="active">
+          <img src="Thumbnails/icons/home.svg" alt="">
+          <p class="">Inicio</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/Shorts.svg" alt="">
+          <p class="">Shorts</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/Subscriptions.svg" alt="">
+          <p class="">Subscripciones</p>
+        </button>
       </section>
 
       <!-- Nav Account Section -->
       <section class="leftNav-section leftNav-Channel">
-        <button>Tu</button>
-        <div>
-          <img src="Thumbnails/icons/home.svg" alt="">
-          <button>Tu canal</button>
-        </div>
-        <button>Historial</button>
-        <button>Mis Videos</button>
-        <button>Ver mas tarde</button>
-        <button>Tus Clips</button>
+        <button class="title">
+          Tú
+          <img src="Thumbnails/icons/Forward_Arrow_32px.png" alt="" style="width: 15px; margin-left: 5px;">
+        </button>
+        <button>
+          <img src="Thumbnails/icons/YourChannel.svg" alt="">
+          <p class="">Tu canal</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/history.svg" alt="">
+          <p class="">Historial</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/Live.svg" alt="">
+          <p class="">Mis videos</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/WatchLater.svg" alt="">
+          <p class="">Ver más tarde</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/Subscriptions.svg" alt="">
+          <p class="">Historial</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/Subscriptions.svg" alt="">
+          <p class="">Historial</p>
+        </button>
       </section>
 
 
@@ -100,7 +127,7 @@
           <g><path d="M21 6H3V5h18v1zm0 5H3v1h18v-1zm0 6H3v1h18v-1z"></path></g> 
       </button>
       <div  class="youtubeIcon">
-        <img src="thumbnails/icons/youtube-logo.svg" alt="">
+        <img src="thumbnails/icons/LogoTube.svg" alt="">
         <small>ME</small>
         <div class="tooltip" >Página de inicio de Youtube</div>
       </div>

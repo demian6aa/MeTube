@@ -1,23 +1,35 @@
+:root{
+  --leftNav-hover-or-active:rgba(235, 235, 235, 0.782);
+}
+
+
+
+
+
+
 /* Left Nav */
 .leftNavAll, .leftNavAll button{
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   color: var(--backgroundColorB);
+  /* background-color: orange; */
+  background-color: var(--backgroundColorW);
 }
 .leftNav{
   position: absolute;
   top: 0; bottom: 0; left: 0;
-  transform:translate3D(-100%, 0,0);
+  /* transform:translate3D(-100%, 0,0); */
 
   width: 240px;
  
   transition: transform 300ms;
   background-color: var(--backgroundColorW);
   
-  padding-left: 20px;
+
+  z-index: 200;
   /* Variables a quitar al acabar */
   height: 3000px;
-  z-index: 200;
+
 }
 .leftNav-background{
   position: fixed;
@@ -34,16 +46,62 @@ pointer-events: none;
 
 }
 
+/* nav header*/
+.leftNav .youtubeIcon img{
+  top: 18px;left: 4px;
+}
+.leftNav .menu-button.active{
+  height: 40px; width: 40px;
+}
+
+/* Active button modifier */
+.leftNav-section Button.active{
+  background-color: var(--leftNav-hover-or-active);
+  
+ }.leftNav-section Button.active:hover{
+  background-color: var(--backgroundColorW-hover);
+  /* background-color: orange; */
+  
+ }.leftNav-section Button.active p{
+  font-weight: 500;
+  
+
+ }.leftNav-section Button.active img{
+
+ }
+   
+
+
 
 /* global sections styles */
 .leftNav-section{
   border-top: 0.5px solid rgb(223, 223, 223);
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding: 15px 24px 15px 24px;
+
 }
 .leftNav-section Button{
- display: block;
-}
+ display: flex;
+ align-items: center;
+
+ border-radius: 10px ;
+
+ height: 40px;
+ width: 100%;
+}.leftNav-section Button{
+  display: flex;
+  align-items: center;
+ 
+  border-radius: 10px ;
+ 
+  height: 40px;
+  width: 100%;
+ }.leftNav-section Button:hover{
+  background-color: var(--leftNav-hover-or-active);
+ }.leftNav-section Button p{
+ padding-left: 20px;
+}.leftNav-section Button img{
+  width: 25px;
+ }
 
 .leftNav-section div{
   display: flex;

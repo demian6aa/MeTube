@@ -35,19 +35,24 @@ header{
   border: none;
   position: relative;
 
-  flex: none;
+  /* flex: none; */
   justify-content: center;
   /* background-color: purple; */
 }.youtubeIcon:hover{
   cursor: pointer;
 }.youtubeIcon img{
   /* min-width: 100%; */
-  width: 100%;height: 100%;
+  position: absolute;
+  width: 85% ;
+    /* height: 75%;  */
+  top: 4%;left: 5%;
+
 
 }.youtubeIcon small{
   position: absolute;
-  top: 12px; right: -4px;
+  top: 12px; right: -1px;
   font-size: 10px;
+  color: gray;
 }.youtubeIcon .tooltip{
   position: absolute;
 
