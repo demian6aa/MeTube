@@ -1,7 +1,8 @@
 /* Z-index bibliography:
 - Base => 0
-- Tooltips => 100
-- Nav => 200
+- Tooltips => 10
+- General Menus => 20
+- dropdowns and navs => 30
 */
 
 
@@ -10,15 +11,16 @@
   --backgroundColorT: transparent;
   --backgroundColorST: rgba(0, 0, 0, 0.086);
   --backgroundColorST-hover: rgba(0, 0, 0, .15);
-  --backgroundColorW: #FFFFFF;
+  --backgroundColorW: #f6f6f6;
+  --backgroundColorWhiter: #ffffff;
   --backgroundColorB:#282828;
   --backgroundColorB-WOpacity:#282828c7;
   --backgroundColorW-hover:  rgba(0, 0, 0, 0.1);
-  
+  /* overflow-x: hidden; */
 }
 .tooltip{
   cursor: auto;
-  z-index: 100;
+  z-index: 20;
 }
 
 
@@ -26,12 +28,18 @@
 body{
   font-family:"Roboto",Arial ;
   margin: 0px;
-  background-color: orange;
+  background-color: var(--backgroundColorW);
+  /* background-color: orange; */
 }
 button{
   border: none;
 }button:hover{
   cursor: pointer;
+}
+main{
+  /* position: relative;
+  top:80px; */
+  margin-top: 80px;
 }
 
 
@@ -49,7 +57,7 @@ button{
 
 @media(max-width:695px){
   .video-feed{
-    background-color: red;
+    /* background-color: red; */
     grid-template-columns: 1fr;
     margin-right: auto;
     margin-left: auto;
@@ -59,7 +67,7 @@ button{
 }
 @media(min-width:696px) and (max-width:1024px){
   .video-feed{
-    background-color: rgb(200, 79, 79);   
+    /* background-color: rgb(200, 79, 79);    */
     grid-template-columns: 1fr 1fr;
     margin-right: auto;
     margin-left: auto;
@@ -69,31 +77,34 @@ button{
 }
 @media(min-width:1025px) and (max-width:1551px){
   .video-feed{
-    background-color: rgb(200, 123, 79);
+    /* background-color: rgb(200, 123, 79); */
+    background-color: var(--backgroundColorW);
     grid-template-columns: 1fr 1fr 1fr;
 
   }
 }
 @media(min-width:1552px) and (max-width:1860px){
   .video-feed{
-    background-color: rgb(200, 123, 79);
+    /* background-color: rgb(200, 123, 79); */
     grid-template-columns: 1fr 1fr 1fr 1fr;
 
   }
 }
 @media(min-width:1861px) and (max-width:2190px){
   .video-feed{
-    background-color: rgb(200, 123, 79);
+    /* background-color: rgb(200, 123, 79); */
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 
   }
 }@media(min-width:2191px){
   .video-feed{
-    background-color: rgb(200, 123, 79);
+    /* background-color: rgb(200, 123, 79); */
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 
   }
 }
+
+
 
 
 /* FEED DE VIDEO */
@@ -102,11 +113,12 @@ button{
 .video-feed{
   display: grid;
   padding-top: 24px;
-  height: 100%;
+  /* height: 100%; */
+  overflow: hidden;
 }
 
 .video-container{
-  background-color: pink;
+  /* background-color: pink; */
   padding-left: 20px;
   padding-right: 20px;
   height: fit-content;

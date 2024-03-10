@@ -9,11 +9,14 @@
   <link rel="stylesheet" href="styles/CatBar.css">
   <link rel="stylesheet" href="styles/Header.css">
   <link rel="stylesheet" href="styles/LeftNav.css">
+  
 
   <!--EndStyles  -->
   <!-- Scripts -->
   <script src="JS/CatBar.js" defer></script> 
   <script src="JS/LeftNav.js" defer></script> 
+  <script src="JS/General.js" defer></script> 
+  <script src="JS/Header.js" defer></script> 
   <!-- EndScripts -->
   <!--TextData-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,23 +24,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">  
   <!--EndTextData-->
 
-<!-- Actual Work:
-   submenu horizontal
- -->
 
 </head>
-<body>
+<body id="body">
 
-  <section class="leftNavAll">
+  <!-- LeftNavs -->
+  <!-- SmallLeftNav -->
+  <section class="leftNavAll" style="overflow-y: auto;">\
     <div class="leftNav-background"></div>
     <nav id="leftNavID" class="leftNav">
       <!-- Nav header -->
-      <div style="display: flex; align-items: center; "> 
-        <button class="menu-button">
-          <svg xmlns="http://www.w3.org/2000" ><g><path d="M21 6H3V5h18v1zm0 5H3v1h18v-1zm0 6H3v1h18v-1z"></path></g> 
+      <div style="display: flex; align-items: center; padding: 0px 24px 0px 24px;"> 
+        <button class="menu-button" style="margin-right: 0px;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
         </button>
-        <div  class="youtubeIcon">
-          <img src="Thumbnails/icons/pngMeTube_128.png" alt="">
+        <div  class="youtubeIcon" style="padding-left: 12px;">
+          <img src="Thumbnails/icons/pngMeTube_128.png" alt="tubeIcon">
           <small>ME</small>
           <div class="tooltip" >Página de inicio de Youtube</div>
         </div>
@@ -45,16 +49,16 @@
       <!-- Nav First section -->
       <section id="leftNavGeneral" class="leftNav-section leftNav-general">
         <button class="active">
-          <img src="Thumbnails/icons/home.svg" alt="">
+          <img src="Thumbnails/icons/home.svg" alt="home">
           <p class="">Inicio</p>
         </button>
         <button>
-          <img src="Thumbnails/icons/Shorts.svg" alt="">
+          <img src="Thumbnails/icons/Shorts.svg" alt="shorts">
           <p class="">Shorts</p>
         </button>
         <button>
-          <img src="Thumbnails/icons/Subscriptions.svg" alt="">
-          <p class="">Subscripciones</p>
+          <img src="Thumbnails/icons/Subscriptions.svg" alt="subscriptions">
+          <p class="">Suscripciones</p>
         </button>
       </section>
 
@@ -62,106 +66,562 @@
       <section class="leftNav-section leftNav-Channel">
         <button class="title">
           Tú
-          <img src="Thumbnails/icons/Forward_Arrow_32px.png" alt="" style="width: 15px; margin-left: 5px;">
+          <img src="Thumbnails/icons/arrow-forward-32px.png" alt="arrowForward" class="arrow" style="width: 15px; margin-left: 9px;">
         </button>
         <button>
-          <img src="Thumbnails/icons/YourChannel.svg" alt="">
+          <img src="Thumbnails/icons/YourChannel.svg" alt="yourChannel">
           <p class="">Tu canal</p>
         </button>
         <button>
-          <img src="Thumbnails/icons/history.svg" alt="">
+          <img src="Thumbnails/icons/history.svg" alt="history">
           <p class="">Historial</p>
         </button>
         <button>
-          <img src="Thumbnails/icons/YourVideos.svg" alt="" style="width: 15px; border: 2px solid; padding: 2.9px; ">
+          <img src="Thumbnails/icons/YourVideos.svg" alt="yourVideos" style="width: 12px; border: 1px solid; padding: 2.9px; ">
           <p class="">Mis videos</p>
         </button>
         <button>
-          <img src="Thumbnails/icons/LogoTube.svg" alt="">
+          <img src="Thumbnails/icons/WatchLater.svg" alt="watchLater">
           <p class="">Ver más tarde</p>
         </button>
         <button>
-          <img src="Thumbnails/icons/pngMeTube_128.png" alt="">
-          <p class="">Historial</p>
+          <img src="Thumbnails/icons/YourClips.png" alt="yourClips">
+          <p class="">Tus clips</p>
         </button>
         <button>
-          <img src="Thumbnails/icons/Subscriptions.svg" alt="">
-          <p class="">Historial</p>
+          <img src="Thumbnails/icons/arrow-down.svg" alt="arrowDown" class="arrow" style="margin-left: 5px;">
+          <p class="">Mostrar más</p>
         </button>
       </section>
 
 
       <!-- Subscriptions -->
       <section class="leftNav-section leftNav-Subs">
-        <p class="title">Subscripciones</p>
-        <div>
-          <img src="Thumbnails/ProfilePics/1.jpg" alt="">
-          <p>channel name</p>
-        </div>
+        <p class="title">Suscripciones</p>
+        <button>
+          <img src="Thumbnails/ProfilePics/1.jpg" alt="profilePic">
+          <p class="">Channel name</p>
+          <img src="Thumbnails/icons/Live.svg" alt="live" class="notification">
+        </button>
       </section>
 
       <!-- Explore -->
       <section class="leftNav-section">
-        <p>Explorar</p>
+        <p class="title">Explorar</p>
+        <button>
+          <img src="Thumbnails/icons/Trending.svg" alt="tren">
+          <p class="">Tendencias</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/Music.svg" alt="music">
+          <p class="">Musica</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/Films.svg" alt="Films">
+          <p class="">Peliculas</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/Live.svg" alt="live">
+          <p class="">En directo</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/Games.svg" alt="Games">
+          <p class="">Videojuegos</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/News.svg" alt="news">
+          <p class="">Noticias</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/sports.svg" alt="sports">
+          <p class="">Deportes</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/Learning_lightbulb.svg" alt="learning">
+          <p class="">Aprendizaje</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/Podcast.svg" alt="podcast">
+          <p class="">Pódcast</p>
+        </button>
+
       </section>
 
       <!-- More -->
       <section class="leftNav-section">
-        <div>Youtube Premium</div>
+        <p class="title">Más de YouTube</p>
+        <button>
+          <img src="Thumbnails/icons/YouTube-Icon.svg" alt="tubeIcon">
+          <p class="">YouTube Premium</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/YouTube-studio.png" alt="Ystudio">
+          <p class="">YouTube Studio</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/YouTube-music.svg" alt="Ymusic">
+          <p class="">YouTube Music</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/YouTube-kids.png" alt="Ykids">
+          <p class="">YouTube Kids</p>
+        </button>
       </section>
 
       <section class="leftNav-section">
-        <div>Configuración</div>
+        <button>
+          <img src="Thumbnails/icons/config.svg" alt="config">
+          <p class="">Configuración</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/flag-reports.svg" alt="reports">
+          <p class="">Historial de denuncias</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/help.png" alt="help">
+          <p class="">Ayuda</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/message-suggestions.svg" alt="suggestions">
+          <p class="">Enviar sugerencias</p>
+        </button>
+ 
 
 
       </section>
 
     </nav>
   </section>
-  
+  <!-- MidLeftNav -->
+  <div id="leftNav-mid-container" style="position: relative;">
+    <section class="leftNav-mid">
+      <button>
+        <img src="Thumbnails/icons/home.svg" alt="home">
+        <p>Inicio</p>
+      </button>
+      <button>
+        <img src="Thumbnails/icons/Shorts.svg" alt="shorts">
+        <p>Shorts</p>
+      </button>
+      <button>
+        <img src="Thumbnails/icons/Subscriptions.svg" alt="subscriptions">
+        <p>Suscripciones</p>
+      </button>
+      <button>
+        <img src="Thumbnails/icons/library.svg" alt="library">
+        <p>Tú</p>
+      </button>
+    </section>
+  </div>
+  <!-- BigLeftNav -->
+  <section class="leftNavAll" style="overflow-y: auto;">\
+    <nav id="leftNavID" class="leftNav-Big">
+      <!-- Nav First section -->
+      <section id="leftNavGeneral" class="leftNav-section leftNav-general">
+        <button class="active">
+          <img src="Thumbnails/icons/home.svg" alt="home">
+          <p class="">Inicio</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/Shorts.svg" alt="shorts">
+          <p class="">Shorts</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/Subscriptions.svg" alt="subscriptions">
+          <p class="">Suscripciones</p>
+        </button>
+      </section>
+      <!-- Nav Account Section -->
+      <section class="leftNav-section leftNav-Channel">
+        <button class="title">
+          Tú
+          <img src="Thumbnails/icons/arrow-forward-32px.png" alt="arrowForward" class="arrow" style="width: 15px; margin-left: 9px;">
+        </button>
+        <button>
+          <img src="Thumbnails/icons/YourChannel.svg" alt="yourChannel">
+          <p class="">Tu canal</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/history.svg" alt="history">
+          <p class="">Historial</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/YourVideos.svg" alt="yourVideos" style="width: 12px; border: 1px solid; padding: 2.9px; ">
+          <p class="">Mis videos</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/WatchLater.svg" alt="watchLater">
+          <p class="">Ver más tarde</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/YourClips.png" alt="yourClips">
+          <p class="">Tus clips</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/arrow-down.svg" alt="arrowDown" class="arrow" style="margin-left: 5px;">
+          <p class="">Mostrar más</p>
+        </button>
+      </section>
+      <!-- Subscriptions -->
+      <section class="leftNav-section leftNav-Subs">
+        <p class="title">Suscripciones</p>
+        <button>
+          <img src="Thumbnails/ProfilePics/1.jpg" alt="Thumbn">
+          <p class="">Channel name</p>
+          <img src="Thumbnails/icons/Live.svg" alt="live" class="notification">
+        </button>
+      </section>
+      <!-- Explore -->
+      <section class="leftNav-section">
+        <p class="title">Explorar</p>
+        <button>
+          <img src="Thumbnails/icons/Trending.svg" alt="trending">
+          <p class="">Tendencias</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/Music.svg" alt="music">
+          <p class="">Musica</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/Films.svg" alt="film">
+          <p class="">Peliculas</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/Live.svg" alt="live">
+          <p class="">En directo</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/Games.svg" alt="games">
+          <p class="">Videojuegos</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/News.svg" alt="news">
+          <p class="">Noticias</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/sports.svg" alt="sports">
+          <p class="">Deportes</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/Learning_lightbulb.svg" alt="learning">
+          <p class="">Aprendizaje</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/Podcast.svg" alt="podcast">
+          <p class="">Pódcast</p>
+        </button>
+
+      </section>
+      <!-- More -->
+      <section class="leftNav-section">
+        <p class="title">Más de YouTube</p>
+        <button>
+          <img src="Thumbnails/icons/YouTube-Icon.svg" alt="YIcon">
+          <p class="">YouTube Premium</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/YouTube-studio.png" alt="YStudio">
+          <p class="">YouTube Studio</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/YouTube-music.svg" alt="YMusic">
+          <p class="">YouTube Music</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/YouTube-kids.png" alt="YKids">
+          <p class="">YouTube Kids</p>
+        </button>
+      </section>
+      <section class="leftNav-section">
+        <button>
+          <img src="Thumbnails/icons/config.svg" alt="config">
+          <p class="">Configuración</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/flag-reports.svg" alt="reports">
+          <p class="">Historial de denuncias</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/help.png" alt="help">
+          <p class="">Ayuda</p>
+        </button>
+        <button>
+          <img src="Thumbnails/icons/message-suggestions.svg" alt="suggestions">
+          <p class="">Enviar sugerencias</p>
+        </button>
+ 
+
+
+      </section>
+    </nav>
+  </section>
+
+  <!-- header -->
   <header>
     <!-- LeftAreaHeader -->
     <div class="leftAreaHeader">
       <button id="menuButton"  class="menu-button">
-        <svg xmlns="http://www.w3.org/2000" >
-          <g><path d="M21 6H3V5h18v1zm0 5H3v1h18v-1zm0 6H3v1h18v-1z"></path></g> 
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>        
       </button>
       <div  class="youtubeIcon">
-        <img src="Thumbnails/icons/pngMeTube_128.png" alt="">
+        <img src="Thumbnails/icons/pngMeTube_128.png" alt="tubeIcon">
         <small>ME</small>
         <div class="tooltip" >Página de inicio de Youtube</div>
       </div>
     </div> 
     <div class="centerHeader">
+      <section class="searchBox-container-bigPicture">
+        <div class="searchBox">
+          <input type="text" class="searchBox-text" placeholder="Buscar" >
+          <button class="searchBox-button searchBox-button-adjust"><img src="Thumbnails/icons/search.svg" alt="search"></button>
+          <div class="searchBox-history">
+            <button>
+              <img src="Thumbnails/icons/history.svg" alt="history">
+              <p>Resultado del historial 1</p>
+              <small class="">Eliminar</small>
+            </button>
+            <button>
+              <img src="Thumbnails/icons/history.svg" alt="historial">
+              <p>Resultado del historial 2</p>
+              <small class="">Eliminar</small>
+            </button>
+            <button>
+              <img src="Thumbnails/icons/history.svg" alt="historial">
+              <p>Resultado del historial 3</p>
+              <small class="">Eliminar</small>
+            </button>
+            <button>
+              <img src="Thumbnails/icons/history.svg" alt="historial">
+              <p>Resultado del historial 4</p>
+              <small class="">Eliminar</small>
+            </button>
+            <button>
+              <img src="Thumbnails/icons/history.svg" alt="historial">
+              <p>Resultado del historial 5</p>
+              <small class="">Eliminar</small>
+            </button>
+            <button>
+              <img src="Thumbnails/icons/history.svg" alt="historial">
+              <p>Resultado del historial 6</p>
+              <small class="">Eliminar</small>
+            </button>
+            <button>
+              <img src="Thumbnails/icons/history.svg" alt="historial">
+              <p>Resultado del historial 7</p>
+              <small class="">Eliminar</small>
+            </button>
+            <button>
+              <img src="Thumbnails/icons/history.svg" alt="historial">
+              <p>Resultado del historial 8</p>
+              <small class="">Eliminar</small>
+            </button>
+            <button>
+              <img src="Thumbnails/icons/history.svg" alt="historial">
+              <p>Resultado del historial 9</p>
+              <small class="">Eliminar</small>
+            </button>
+            <button>
+              <img src="Thumbnails/icons/history.svg" alt="historial">
+              <p>Resultado del historial 10</p>
+              <small class="">Eliminar</small>
+            </button>
+          </div>
+
+        </div>
+        <div>
+          <button class="VoiceSearchB">
+            <img src="Thumbnails/icons/voice-search-icon.svg" alt="voiceSearch">
+            <div class="tooltip">Haz búsquedas por voz</div>
+          </button>
+        </div>
+      </section>
       <button class="SearchB">
-        <img src="Thumbnails/icons/search.svg" alt="">
+        <img src="Thumbnails/icons/search.svg" alt="search">
         <div class="tooltip">Buscar</div>
       </button>
       <button class="VoiceSearchB">
-        <img src="Thumbnails/icons/voice-search-icon.svg" alt="">
+        <img src="Thumbnails/icons/voice-search-icon.svg" alt="voiceSearch">
         <div class="tooltip">Haz búsquedas por voz</div>
       </button>
     </div>
     <div class="rightHeader">
-      <button class="UploadB">
-        <img src="Thumbnails/icons/upload.svg" alt="">
-        <div class="tooltip">Crear</div>
-      </button>
-      <button class="NotificationsB">
-        <img src="Thumbnails/icons/notifications.svg" alt="">
-        <small class="notificationsNumber">3</small>
-        <div class="tooltip">Notificaciones</div>
-      </button>
-      <button class="channelButton">
-        <img src="Thumbnails/ProfilePics/MyChannel.jpg" alt="">
-    </div>
+      <div>
+        <button class="UploadB">
+          <img src="Thumbnails/icons/upload.svg" alt="upload">
+          <div class="tooltip">Crear</div>
+        </button>
+        <div class="dropdown-menu">
+          <button class="dropdown-button">
+            <img src="Thumbnails/icons/YourVideos.svg" alt="yourVideos" style="width: 16.6px; height: 16.6px; border: 1px solid; padding: 2.9px; ">
+            <p class="">Subir vídeo</p>
+          </button>
+          <button class="dropdown-button">
+            <img src="Thumbnails/icons/Live.svg" alt="live">
+            <p class="">Emitir en directo</p>
+          </button>
+        </div>
+      </div>
+      <div>
+        <button class="NotificationsB">
+          <img src="Thumbnails/icons/notifications.svg" alt="notifications">
+          <small class="notificationsNumber">3</small>
+          <div class="tooltip">Notificaciones</div>
+        </button>
+        <section class="notifications-container">
+          <div class="notif-header">
+            <p>Notificaciones</p>
+            <button><img src="Thumbnails/icons/config.svg" alt="config"></button>
+          </div>
+          <div class="notif-feed">
     
-    </button>
+            <button class="notif">
+              <div class="notif-new-isNew"></div>
+              <img src="Thumbnails/ProfilePics/1.jpg" alt="profilePic" class="notif-channelImg">
+              <div class="notif-videoInfo">
+                <p class="notif-videoTitle">midulive ha subido iGOOGLE ELIMINÖ una de sus Funciones Més IMPORTANTES!</p>
+                <small>hace 4 horas</small>
+              </div>
+              <img src="Thumbnails/VideoPic/1.webp" alt="videoPicture" class="notif-miniature">
+              <div class="notif-dots"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 12.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 18.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z" />
+              </svg>
+              </div>
+            </button>
+    
+          </div>
 
+        </section>
+      </div>
+      <div>
+
+      </div>
+      <button class="channelButton">
+        <img src="Thumbnails/ProfilePics/MyChannel.jpg" alt="myChannel">
+      </button>
+      <nav class="channelCM-container">
+        <section class="channelCM-header">
+          <img src="Thumbnails/ProfilePics/MyChannel.jpg" alt="myChannel">
+          <p>
+            <span>accountName</span>
+            <span>@account</span>
+            <small id="channelCM-yourChannel" style="margin-top: 8px; color:rgb(60, 133, 235); cursor: pointer;">Ver tu canal</small>
+          </p>
+        </section>
+        <section class="channelCM-section">
+          <button>
+            <img src="Thumbnails/icons/G-icon.svg" alt="GIcon">
+            <p>Cuenta de google</p>
+          </button>
+          <button>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-users" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /><path d="M21 21v-2a4 4 0 0 0 -3 -3.85" /></svg>
+            <p>Cambiar de cuenta</p>
+          </button>
+          <button>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15M12 9l3 3m0 0-3 3m3-3H2.25" /></svg>            
+            <p>Cerrar sesión</p>
+          </button>
+        </section>
+        <section class="channelCM-section">
+          <button>
+            <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24" focusable="false"><path d="M10 9.35 15 12l-5 2.65ZM12 3a.73.73 0 00-.31.06L4.3 7.28a.79.79 0 00-.3.52v8.4a.79.79 0 00.3.52l7.39 4.22a.83.83 0 00.62 0l7.39-4.22a.79.79 0 00.3-.52V7.8a.79.79 0 00-.3-.52l-7.39-4.22A.73.73 0 0012 3m0-1a1.6 1.6 0 01.8.19l7.4 4.22A1.77 1.77 0 0121 7.8v8.4a1.77 1.77 0 01-.8 1.39l-7.4 4.22a1.78 1.78 0 01-1.6 0l-7.4-4.22A1.77 1.77 0 013 16.2V7.8a1.77 1.77 0 01.8-1.39l7.4-4.22A1.6 1.6 0 0112 2Zm0 4a.42.42 0 00-.17 0l-4.7 2.8a.59.59 0 00-.13.39v5.61a.65.65 0 00.13.37l4.7 2.8A.42.42 0 0012 18a.34.34 0 00.17 0l4.7-2.81a.56.56 0 00.13-.39V9.19a.62.62 0 00-.13-.37L12.17 6A.34.34 0 0012 6m0-1a1.44 1.44 0 01.69.17L17.39 8A1.46 1.46 0 0118 9.19v5.61a1.46 1.46 0 01-.61 1.2l-4.7 2.81A1.44 1.44 0 0112 19a1.4 1.4 0 01-.68-.17L6.62 16A1.47 1.47 0 016 14.8V9.19A1.47 1.47 0 016.62 8l4.7-2.8A1.4 1.4 0 0112 5Z"></path></svg>
+            <p>YouTube Studio</p>
+          </button>
+          <button>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-coin" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M14.8 9a2 2 0 0 0 -1.8 -1h-2a2 2 0 1 0 0 4h2a2 2 0 1 1 0 4h-2a2 2 0 0 1 -1.8 -1" /><path d="M12 7v10" /></svg>
+            <p>Compras y Suscripciones</p>
+          </button>
+        </section>
+        <section class="channelCM-section">
+          <button>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false"><path d="m12 3.06 7 3.21v4.84c0 1.3-.25 2.6-.75 3.86-.15.37-.33.76-.55 1.17-.15.27-.31.54-.48.81-1.32 2.01-3.17 3.42-5.23 3.98-2.06-.56-3.91-1.97-5.23-3.98-.17-.27-.33-.54-.48-.81-.22-.41-.4-.79-.55-1.17-.48-1.26-.73-2.56-.73-3.86V6.27l7-3.21m0-1.1L4 5.63v5.49c0 1.47.3 2.9.81 4.22.17.44.37.86.6 1.28.16.3.34.6.52.88 1.42 2.17 3.52 3.82 5.95 4.44l.12.02.12-.03c2.43-.61 4.53-2.26 5.95-4.43.19-.29.36-.58.52-.88.22-.41.43-.84.6-1.28.51-1.33.81-2.76.81-4.23V5.63l-8-3.67zm1.08 10.15c-.32-.06-.64-.11-.96-.12A2.997 2.997 0 0012 6a2.996 2.996 0 00-.12 5.99c-.32.01-.64.06-.96.12C8.64 12.58 7 14.62 7 17h10c0-2.38-1.64-4.42-3.92-4.89zM10 9c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm1.12 4.09c.37-.08.64-.11.88-.11s.51.03.88.11c1.48.3 2.63 1.46 3 2.91H8.12c.37-1.45 1.52-2.61 3-2.91z"></path></svg>
+            <p>Tus datos en YouTube</p>
+          </button>
+          <button>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg>
+            <p>Aspecto: claro</p>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg>
+          </button>
+          <button>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m10.5 21 5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 0 1 6-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 0 1-3.827-5.802" />
+            </svg>            
+            <p>Idioma: Español</p>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg>
+          </button>
+          <button>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" focusable="false">
+              <path d="M12 20.95Q8.975 20.075 6.987 17.312Q5 14.55 5 11.1V5.7L12 3.075L19 5.7V11.35Q18.775 11.275 18.5 11.2Q18.225 11.125 18 11.075V6.375L12 4.15L6 6.375V11.1Q6 12.575 6.438 13.938Q6.875 15.3 7.625 16.438Q8.375 17.575 9.413 18.425Q10.45 19.275 11.625 19.725L11.675 19.7Q11.8 20 11.975 20.288Q12.15 20.575 12.375 20.825Q12.275 20.85 12.188 20.888Q12.1 20.925 12 20.95ZM17 17Q17.625 17 18.062 16.562Q18.5 16.125 18.5 15.5Q18.5 14.875 18.062 14.438Q17.625 14 17 14Q16.375 14 15.938 14.438Q15.5 14.875 15.5 15.5Q15.5 16.125 15.938 16.562Q16.375 17 17 17ZM17 20Q17.8 20 18.438 19.65Q19.075 19.3 19.5 18.7Q18.925 18.35 18.3 18.175Q17.675 18 17 18Q16.325 18 15.7 18.175Q15.075 18.35 14.5 18.7Q14.925 19.3 15.562 19.65Q16.2 20 17 20ZM17 21Q15.325 21 14.163 19.837Q13 18.675 13 17Q13 15.325 14.163 14.162Q15.325 13 17 13Q18.675 13 19.837 14.162Q21 15.325 21 17Q21 18.675 19.837 19.837Q18.675 21 17 21ZM12 11.95Q12 11.95 12 11.95Q12 11.95 12 11.95Q12 11.95 12 11.95Q12 11.95 12 11.95Q12 11.95 12 11.95Q12 11.95 12 11.95Q12 11.95 12 11.95Q12 11.95 12 11.95Q12 11.95 12 11.95Q12 11.95 12 11.95Z"></path>
+            </svg>           
+            <p>Modo Restringido: desactivado</p>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg>
+          </button>
+          <button>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
+            </svg>              
+            <p>Ubicación: España</p>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg>
+          </button>
+          <button>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-keyboard" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M2 6m0 2a2 2 0 0 1 2 -2h16a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2z" /><path d="M6 10l0 .01" /><path d="M10 10l0 .01" /><path d="M14 10l0 .01" /><path d="M18 10l0 .01" /><path d="M6 14l0 .01" /><path d="M18 14l0 .01" /><path d="M10 14l4 .01" /></svg>           
+            <p>Combinaciones de teclas</p>
+          </button>
+        </section>
+        <section class="channelCM-section">
+          <button>
+            <img src="Thumbnails/icons/config.svg" alt="config">
+            <p>Configuración</p>
+          </button>
+        </section>
+        <section class="channelCM-section">
+          <button>
+            <img src="Thumbnails/icons/help.png" alt="help">
+            <p>Ayuda</p>
+          </button>
+          <button>
+            <img src="Thumbnails/icons/message-suggestions.svg" alt="suggestions">
+            <p>Enviar sugerencias</p>
+          </button>
+        </section>
+      </nav>
+    </div>
+
+
+
+
+    <section class="searchBox-container">
+      <div class="backArrow-container">
+        <button class="searchBox-backArrow">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+          </svg>
+        </button>
+      </div>
+      <div class="searchBox">
+        <input type="text" class="searchBox-text" placeholder="Buscar" >
+        <button class="searchBox-button searchBox-button-adjust"><img src="Thumbnails/icons/search.svg" alt="search"></button>
+          <div class="searchBox-history">
+            <button>
+              <img src="Thumbnails/icons/history.svg" alt="history">
+              <p>Resultado del historial 1</p>
+              <small class="">Eliminar</small>
+            </button>
+          </div>
+      </div>
+       
+      <div>
+        <button class="VoiceSearchB">
+          <img src="Thumbnails/icons/voice-search-icon.svg" alt="voiceSearch">
+          <div class="tooltip">Haz búsquedas por voz</div>
+        </button>
+      </div>
+    </section>
   </header>
-  
 
-  <div class="CatBar">
+  <!-- catbar -->
+  <nav class="CatBar">
     <div class="moveButton"><button id="left">&#60</button></div>
     <div class="CatBarContainer">
       <button class="CatButton active">Todo</button>
@@ -182,18 +642,17 @@
       <button class="CatButton">Novedades para ti</button>
     </div>
     <div class="moveButton"><button id="right">&#62</button></div>
-  </div>
+  </nav>
 
-
-  
-  <main>
+  <!-- main video feed -->
+  <main id="main">
     <div class="video-feed">
 
 
       <div class="video-container">
-        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/1.webp" alt=""></div>
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/1.webp" alt="videoPicture"></div>
         <div class="Video-Data">
-          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/1.jpg" alt=""></div>
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/1.jpg" alt="profilePic"></div>
           <div class="Video-Info-container">
             <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
             <div class="Video-channel-name">Cafe Music BGM channel</div>
@@ -201,12 +660,12 @@
           </div>
         </div>
       </div>
-  
+
       <!-- relleno -->
       <div class="video-container">
-        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/1.webp" alt=""></div>
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/1.webp" alt="videoPicture"></div>
         <div class="Video-Data">
-          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/1.jpg" alt=""></div>
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/1.jpg" alt="profilePic"></div>
           <div class="Video-Info-container">
             <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
             <div class="Video-channel-name">Cafe Music BGM channel</div>
@@ -215,9 +674,9 @@
         </div>
       </div>  
       <div class="video-container">
-        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/1.webp" alt=""></div>
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/1.webp" alt="videoPicture"></div>
         <div class="Video-Data">
-          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/1.jpg" alt=""></div>
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/1.jpg" alt="profilePic"></div>
           <div class="Video-Info-container">
             <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
             <div class="Video-channel-name">Cafe Music BGM channel</div>
@@ -226,9 +685,9 @@
         </div>
       </div>  
       <div class="video-container">
-        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/1.webp" alt=""></div>
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/1.webp" alt="videoPicture"></div>
         <div class="Video-Data">
-          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/1.jpg" alt=""></div>
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/1.jpg" alt="profilePic"></div>
           <div class="Video-Info-container">
             <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
             <div class="Video-channel-name">Cafe Music BGM channel</div>
@@ -237,9 +696,9 @@
         </div>
       </div>
       <div class="video-container">
-        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/1.webp" alt=""></div>
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/1.webp" alt="videoPicture"></div>
         <div class="Video-Data">
-          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/1.jpg" alt=""></div>
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/1.jpg" alt="profilePic"></div>
           <div class="Video-Info-container">
             <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
             <div class="Video-channel-name">Cafe Music BGM channel</div>
@@ -248,9 +707,9 @@
         </div>
       </div>
       <div class="video-container">
-        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/1.webp" alt=""></div>
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/1.webp" alt="videoPicture"></div>
         <div class="Video-Data">
-          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/1.jpg" alt=""></div>
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/1.jpg" alt="profilePic"></div>
           <div class="Video-Info-container">
             <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
             <div class="Video-channel-name">Cafe Music BGM channel</div>
@@ -259,9 +718,9 @@
         </div>
       </div>
       <div class="video-container">
-        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/1.webp" alt=""></div>
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/1.webp" alt="videoPicture"></div>
         <div class="Video-Data">
-          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/1.jpg" alt=""></div>
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/1.jpg" alt="profilePic"></div>
           <div class="Video-Info-container">
             <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
             <div class="Video-channel-name">Cafe Music BGM channel</div>
@@ -270,9 +729,405 @@
         </div>
       </div>
       <!-- fin del relleno --> 
+      <!-- relleno 2--> 
+      <div class="video-container">
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/PreviewVideo.jpg" alt="videoPicture"></div>
+        <div class="Video-Data">
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/ProfilePicPreview.jpg" alt="profilePic"></div>
+          <div class="Video-Info-container">
+            <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
+            <div class="Video-channel-name">Cafe Music BGM channel</div>
+            <div>37 K visualizaciones &#183; hace 20 horas</div>
+          </div>
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/PreviewVideo.jpg" alt="videoPicture"></div>
+        <div class="Video-Data">
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/ProfilePicPreview.jpg" alt="profilePic"></div>
+          <div class="Video-Info-container">
+            <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
+            <div class="Video-channel-name">Cafe Music BGM channel</div>
+            <div>37 K visualizaciones &#183; hace 20 horas</div>
+          </div>
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/PreviewVideo.jpg" alt="videoPicture"></div>
+        <div class="Video-Data">
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/ProfilePicPreview.jpg" alt="profilePic"></div>
+          <div class="Video-Info-container">
+            <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
+            <div class="Video-channel-name">Cafe Music BGM channel</div>
+            <div>37 K visualizaciones &#183; hace 20 horas</div>
+          </div>
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/PreviewVideo.jpg" alt="videoPicture"></div>
+        <div class="Video-Data">
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/ProfilePicPreview.jpg" alt="profilePic"></div>
+          <div class="Video-Info-container">
+            <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
+            <div class="Video-channel-name">Cafe Music BGM channel</div>
+            <div>37 K visualizaciones &#183; hace 20 horas</div>
+          </div>
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/PreviewVideo.jpg" alt="videoPicture"></div>
+        <div class="Video-Data">
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/ProfilePicPreview.jpg" alt="profilePic"></div>
+          <div class="Video-Info-container">
+            <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
+            <div class="Video-channel-name">Cafe Music BGM channel</div>
+            <div>37 K visualizaciones &#183; hace 20 horas</div>
+          </div>
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/PreviewVideo.jpg" alt="videoPicture"></div>
+        <div class="Video-Data">
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/ProfilePicPreview.jpg" alt="profilePic"></div>
+          <div class="Video-Info-container">
+            <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
+            <div class="Video-channel-name">Cafe Music BGM channel</div>
+            <div>37 K visualizaciones &#183; hace 20 horas</div>
+          </div>
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/PreviewVideo.jpg" alt="videoPicture"></div>
+        <div class="Video-Data">
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/ProfilePicPreview.jpg" alt="profilePic"></div>
+          <div class="Video-Info-container">
+            <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
+            <div class="Video-channel-name">Cafe Music BGM channel</div>
+            <div>37 K visualizaciones &#183; hace 20 horas</div>
+          </div>
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/PreviewVideo.jpg" alt="videoPicture"></div>
+        <div class="Video-Data">
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/ProfilePicPreview.jpg" alt="profilePic"></div>
+          <div class="Video-Info-container">
+            <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
+            <div class="Video-channel-name">Cafe Music BGM channel</div>
+            <div>37 K visualizaciones &#183; hace 20 horas</div>
+          </div>
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/PreviewVideo.jpg" alt="videoPicture"></div>
+        <div class="Video-Data">
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/ProfilePicPreview.jpg" alt="profilePic"></div>
+          <div class="Video-Info-container">
+            <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
+            <div class="Video-channel-name">Cafe Music BGM channel</div>
+            <div>37 K visualizaciones &#183; hace 20 horas</div>
+          </div>
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/PreviewVideo.jpg" alt="videoPicture"></div>
+        <div class="Video-Data">
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/ProfilePicPreview.jpg" alt="profilePic"></div>
+          <div class="Video-Info-container">
+            <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
+            <div class="Video-channel-name">Cafe Music BGM channel</div>
+            <div>37 K visualizaciones &#183; hace 20 horas</div>
+          </div>
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/PreviewVideo.jpg" alt="videoPicture"></div>
+        <div class="Video-Data">
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/ProfilePicPreview.jpg" alt="profilePic"></div>
+          <div class="Video-Info-container">
+            <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
+            <div class="Video-channel-name">Cafe Music BGM channel</div>
+            <div>37 K visualizaciones &#183; hace 20 horas</div>
+          </div>
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/PreviewVideo.jpg" alt="videoPicture"></div>
+        <div class="Video-Data">
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/ProfilePicPreview.jpg" alt="profilePic"></div>
+          <div class="Video-Info-container">
+            <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
+            <div class="Video-channel-name">Cafe Music BGM channel</div>
+            <div>37 K visualizaciones &#183; hace 20 horas</div>
+          </div>
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/PreviewVideo.jpg" alt="videoPicture"></div>
+        <div class="Video-Data">
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/ProfilePicPreview.jpg" alt="profilePic"></div>
+          <div class="Video-Info-container">
+            <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
+            <div class="Video-channel-name">Cafe Music BGM channel</div>
+            <div>37 K visualizaciones &#183; hace 20 horas</div>
+          </div>
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/PreviewVideo.jpg" alt="videoPicture"></div>
+        <div class="Video-Data">
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/ProfilePicPreview.jpg" alt="profilePic"></div>
+          <div class="Video-Info-container">
+            <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
+            <div class="Video-channel-name">Cafe Music BGM channel</div>
+            <div>37 K visualizaciones &#183; hace 20 horas</div>
+          </div>
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/PreviewVideo.jpg" alt="videoPicture"></div>
+        <div class="Video-Data">
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/ProfilePicPreview.jpg" alt="profilePic"></div>
+          <div class="Video-Info-container">
+            <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
+            <div class="Video-channel-name">Cafe Music BGM channel</div>
+            <div>37 K visualizaciones &#183; hace 20 horas</div>
+          </div>
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/PreviewVideo.jpg" alt="videoPicture"></div>
+        <div class="Video-Data">
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/ProfilePicPreview.jpg" alt="profilePic"></div>
+          <div class="Video-Info-container">
+            <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
+            <div class="Video-channel-name">Cafe Music BGM channel</div>
+            <div>37 K visualizaciones &#183; hace 20 horas</div>
+          </div>
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/PreviewVideo.jpg" alt="videoPicture"></div>
+        <div class="Video-Data">
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/ProfilePicPreview.jpg" alt="profilePic"></div>
+          <div class="Video-Info-container">
+            <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
+            <div class="Video-channel-name">Cafe Music BGM channel</div>
+            <div>37 K visualizaciones &#183; hace 20 horas</div>
+          </div>
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/PreviewVideo.jpg" alt="videoPicture"></div>
+        <div class="Video-Data">
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/ProfilePicPreview.jpg" alt="profilePic"></div>
+          <div class="Video-Info-container">
+            <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
+            <div class="Video-channel-name">Cafe Music BGM channel</div>
+            <div>37 K visualizaciones &#183; hace 20 horas</div>
+          </div>
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/PreviewVideo.jpg" alt="videoPicture"></div>
+        <div class="Video-Data">
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/ProfilePicPreview.jpg" alt="profilePic"></div>
+          <div class="Video-Info-container">
+            <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
+            <div class="Video-channel-name">Cafe Music BGM channel</div>
+            <div>37 K visualizaciones &#183; hace 20 horas</div>
+          </div>
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/PreviewVideo.jpg" alt="videoPicture"></div>
+        <div class="Video-Data">
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/ProfilePicPreview.jpg" alt="profilePic"></div>
+          <div class="Video-Info-container">
+            <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
+            <div class="Video-channel-name">Cafe Music BGM channel</div>
+            <div>37 K visualizaciones &#183; hace 20 horas</div>
+          </div>
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/PreviewVideo.jpg" alt="videoPicture"></div>
+        <div class="Video-Data">
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/ProfilePicPreview.jpg" alt="profilePic"></div>
+          <div class="Video-Info-container">
+            <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
+            <div class="Video-channel-name">Cafe Music BGM channel</div>
+            <div>37 K visualizaciones &#183; hace 20 horas</div>
+          </div>
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/PreviewVideo.jpg" alt="videoPicture"></div>
+        <div class="Video-Data">
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/ProfilePicPreview.jpg" alt="profilePic"></div>
+          <div class="Video-Info-container">
+            <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
+            <div class="Video-channel-name">Cafe Music BGM channel</div>
+            <div>37 K visualizaciones &#183; hace 20 horas</div>
+          </div>
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/PreviewVideo.jpg" alt="videoPicture"></div>
+        <div class="Video-Data">
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/ProfilePicPreview.jpg" alt="profilePic"></div>
+          <div class="Video-Info-container">
+            <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
+            <div class="Video-channel-name">Cafe Music BGM channel</div>
+            <div>37 K visualizaciones &#183; hace 20 horas</div>
+          </div>
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/PreviewVideo.jpg" alt="videoPicture"></div>
+        <div class="Video-Data">
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/ProfilePicPreview.jpg" alt="profilePic"></div>
+          <div class="Video-Info-container">
+            <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
+            <div class="Video-channel-name">Cafe Music BGM channel</div>
+            <div>37 K visualizaciones &#183; hace 20 horas</div>
+          </div>
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/PreviewVideo.jpg" alt="videoPicture"></div>
+        <div class="Video-Data">
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/ProfilePicPreview.jpg" alt="profilePic"></div>
+          <div class="Video-Info-container">
+            <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
+            <div class="Video-channel-name">Cafe Music BGM channel</div>
+            <div>37 K visualizaciones &#183; hace 20 horas</div>
+          </div>
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/PreviewVideo.jpg" alt="videoPicture"></div>
+        <div class="Video-Data">
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/ProfilePicPreview.jpg" alt="profilePic"></div>
+          <div class="Video-Info-container">
+            <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
+            <div class="Video-channel-name">Cafe Music BGM channel</div>
+            <div>37 K visualizaciones &#183; hace 20 horas</div>
+          </div>
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/PreviewVideo.jpg" alt="videoPicture"></div>
+        <div class="Video-Data">
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/ProfilePicPreview.jpg" alt="profilePic"></div>
+          <div class="Video-Info-container">
+            <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
+            <div class="Video-channel-name">Cafe Music BGM channel</div>
+            <div>37 K visualizaciones &#183; hace 20 horas</div>
+          </div>
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/PreviewVideo.jpg" alt="videoPicture"></div>
+        <div class="Video-Data">
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/ProfilePicPreview.jpg" alt="profilePic"></div>
+          <div class="Video-Info-container">
+            <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
+            <div class="Video-channel-name">Cafe Music BGM channel</div>
+            <div>37 K visualizaciones &#183; hace 20 horas</div>
+          </div>
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/PreviewVideo.jpg" alt="videoPicture"></div>
+        <div class="Video-Data">
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/ProfilePicPreview.jpg" alt="profilePic"></div>
+          <div class="Video-Info-container">
+            <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
+            <div class="Video-channel-name">Cafe Music BGM channel</div>
+            <div>37 K visualizaciones &#183; hace 20 horas</div>
+          </div>
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/PreviewVideo.jpg" alt="videoPicture"></div>
+        <div class="Video-Data">
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/ProfilePicPreview.jpg" alt="profilePic"></div>
+          <div class="Video-Info-container">
+            <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
+            <div class="Video-channel-name">Cafe Music BGM channel</div>
+            <div>37 K visualizaciones &#183; hace 20 horas</div>
+          </div>
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/PreviewVideo.jpg" alt="videoPicture"></div>
+        <div class="Video-Data">
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/ProfilePicPreview.jpg" alt="profilePic"></div>
+          <div class="Video-Info-container">
+            <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
+            <div class="Video-channel-name">Cafe Music BGM channel</div>
+            <div>37 K visualizaciones &#183; hace 20 horas</div>
+          </div>
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/PreviewVideo.jpg" alt="videoPicture"></div>
+        <div class="Video-Data">
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/ProfilePicPreview.jpg" alt="profilePic"></div>
+          <div class="Video-Info-container">
+            <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
+            <div class="Video-channel-name">Cafe Music BGM channel</div>
+            <div>37 K visualizaciones &#183; hace 20 horas</div>
+          </div>
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/PreviewVideo.jpg" alt="videoPicture"></div>
+        <div class="Video-Data">
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/ProfilePicPreview.jpg" alt="profilePic"></div>
+          <div class="Video-Info-container">
+            <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
+            <div class="Video-channel-name">Cafe Music BGM channel</div>
+            <div>37 K visualizaciones &#183; hace 20 horas</div>
+          </div>
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/PreviewVideo.jpg" alt="videoPicture"></div>
+        <div class="Video-Data">
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/ProfilePicPreview.jpg" alt="profilePic"></div>
+          <div class="Video-Info-container">
+            <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
+            <div class="Video-channel-name">Cafe Music BGM channel</div>
+            <div>37 K visualizaciones &#183; hace 20 horas</div>
+          </div>
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/PreviewVideo.jpg" alt="videoPicture"></div>
+        <div class="Video-Data">
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/ProfilePicPreview.jpg" alt="profilePic"></div>
+          <div class="Video-Info-container">
+            <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
+            <div class="Video-channel-name">Cafe Music BGM channel</div>
+            <div>37 K visualizaciones &#183; hace 20 horas</div>
+          </div>
+        </div>
+      </div>
+      <div class="video-container">
+        <div class="Video-pic-container"><img class="Video-pic" src="Thumbnails/VideoPic/PreviewVideo.jpg" alt="videoPicture"></div>
+        <div class="Video-Data">
+          <div class="ProfilePic-container"><img class="ProfilePic" src="Thumbnails/ProfilePics/ProfilePicPreview.jpg" alt="profilePic"></div>
+          <div class="Video-Info-container">
+            <div class="Video-title">WENDSDAY MORNING JAZZ: Smooth Jazz Music & Sweet Winter Bossa Nova instrumental for Relaxing</div>
+            <div class="Video-channel-name">Cafe Music BGM channel</div>
+            <div>37 K visualizaciones &#183; hace 20 horas</div>
+          </div>
+        </div>
+      </div>
+      <!-- fin del relleno 2 --> 
     </div>
-
-
   </main>
 
   <footer>
